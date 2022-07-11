@@ -22,3 +22,7 @@ fs_layout = {
 		return dofile(table.concat({modpath, ...}, DIR_DELIM) .. ".lua")
 	end,
 }
+
+fs_layout.dofile("layout_modifiers")
+fs_layout.dofile("components")
+fs_layout.dofile("composition")
