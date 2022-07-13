@@ -1,16 +1,16 @@
 -- https://gitlab.com/luk3yx/minetest-formspec_ast
 
-function fs_layout.calculate_positions(elements)
+function fs_layout.calculate_positions(elements, x_offset, y_offset)
 	elements = table.copy(elements)
-	local x = 0
-	local y = 0
+	local x = x_offset
+	local y = y_offset
 	local width = 0
-	for _, element in elements do
+	for _, element in ipairs(elements) do
 		if element._meta then
 			if element._meta == "offset" then
 				if element._reset_x then
 					width = math.max(x, width)
-					x = 0
+					x = x_offset
 				else
 					x = x + (element._offset_x or 0)
 				end
@@ -27,7 +27,7 @@ function fs_layout.calculate_positions(elements)
 				local container_w, _ = fs_layout.calculate_positions(element)
 				x = x + container_w
 			else
-				x = x + element.w
+				x = x + (element.w or 0)
 			end
 		end
 	end
@@ -39,11 +39,13 @@ function fs_layout.calculate_positions(elements)
 		end
 	end
 
-	return math.max(width, x), y
+	return elements, math.max(width, x), y
 end
 
-function fs_layout.compose(elements)
-	local width, height = fs_layout.calculate_positions(elements)
+function fs_layout.compose(elements, x_offset, y_offset)
+	local width, height
+	elements, width, height = fs_layout.calculate_positions(elements, x_offset, y_offset)
+
 	if elements[1].type ~= "size" then
 		table.insert(elements, 1, fs_layout.size(width, height))
 	end

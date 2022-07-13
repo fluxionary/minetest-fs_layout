@@ -16,7 +16,7 @@ function fs_layout.line_break(h)
 	}
 end
 
-function fs_layout.adjust_offset(x, y)
+function fs_layout.offset(x, y)
 	return {
 		_meta = "offset",
 		_offset_x = x,
