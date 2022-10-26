@@ -3,7 +3,7 @@ local modpath = minetest.get_modpath(modname)
 local S = minetest.get_translator(modname)
 
 fs_layout = {
-	version = {1, 0, 0},
+	version = os.time({year = 2022, month = 10, day = 26}),
 	fork = "fluxionary",
 
 	modname = modname,
