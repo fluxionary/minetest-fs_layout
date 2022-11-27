@@ -1,6 +1,7 @@
-
 function fs_layout.spacer(w)
-	if not w then w = 1 end
+	if not w then
+		w = 1
+	end
 	return {
 		_meta = "offset",
 		_offset_x = w,
@@ -8,7 +9,9 @@ function fs_layout.spacer(w)
 end
 
 function fs_layout.line_break(h)
-	if not h then h = 1 end
+	if not h then
+		h = 1
+	end
 	return {
 		_meta = "offset",
 		_reset_x = true,

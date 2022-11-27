@@ -1,4 +1,3 @@
-
 function fs_layout.size(w, h, fixed_size)
 	return {
 		type = "size",
@@ -55,7 +54,7 @@ function fs_layout.container(...)
 	return {
 		type = "container",
 		xy = true,
-		...
+		...,
 	}
 end
 
@@ -63,7 +62,7 @@ function fs_layout.scroll_container(...)
 	return {
 		type = "scroll_container",
 		xy = true,
-		...
+		...,
 	}
 end
 
@@ -75,7 +74,7 @@ function fs_layout.list(inventory_location, list_name, w, h, starting_item_index
 		list_name = list_name,
 		w = w,
 		h = h,
-		starting_item_index = starting_item_index
+		starting_item_index = starting_item_index,
 	}
 end
 
@@ -84,7 +83,7 @@ function fs_layout.listring(inventory_location, list_name)
 		type = "listring",
 		xy = false,
 		inventory_location = inventory_location,
-		list_name = list_name
+		list_name = list_name,
 	}
 end
 
@@ -107,7 +106,7 @@ function fs_layout.tooltip(gui_element_name, tooltip_text, bgcolor, fontcolor)
 		gui_element_name = gui_element_name,
 		tooltip_text = tooltip_text,
 		bgcolor = bgcolor,
-		fontcolor = fontcolor
+		fontcolor = fontcolor,
 	}
 end
 
@@ -117,7 +116,7 @@ function fs_layout.image(w, h, texture_name)
 		xy = true,
 		w = w,
 		h = h,
-		texture_name = texture_name
+		texture_name = texture_name,
 	}
 end
 
@@ -286,7 +285,7 @@ function fs_layout.button(w, h, name, label)
 		w = w,
 		h = h,
 		name = name,
-		label = label
+		label = label,
 	}
 end
 
@@ -348,7 +347,7 @@ function fs_layout.textlist(w, h, name, listelems, selected_idx, transparent)
 		h = h,
 		listelems = listelems,
 		selected_idx = selected_idx,
-		transparent = transparent
+		transparent = transparent,
 	}
 end
 
@@ -362,7 +361,7 @@ function fs_layout.tabheader(w, h, name, captions, current_tab, transparent, dra
 		captions = captions,
 		current_tab = current_tab,
 		transparent = transparent,
-		draw_border = draw_border
+		draw_border = draw_border,
 	}
 end
 

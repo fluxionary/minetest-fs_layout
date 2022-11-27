@@ -18,7 +18,6 @@ function fs_layout.calculate_positions(elements, x_offset, y_offset)
 			else
 				error(("don't understand how to %s"):format(element._meta))
 			end
-
 		elseif element.xy then
 			element.xy = nil
 			element.x = x
